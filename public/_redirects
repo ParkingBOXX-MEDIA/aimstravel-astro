@@ -1,0 +1,56 @@
+# ── Old .html / .asp page URLs → clean pages ──
+/aboutus.html           /about          301
+/aboutus.asp            /about          301
+/about_aims.htm         /about          301
+/contact.asp            /contact        301
+/contactus.html         /contact        301
+/feedback.asp           /contact        301
+/destinations.asp       /destinations   301
+/destination.asp        /destinations   301
+/whatsnew.asp           /news           301
+/brochures.asp          /               301
+/default.asp            /               301
+/body_index.htm         /               301
+/header_index.htm       /               301
+
+# ── WordPress portfolio slugs (2015–2016 era) → home ──
+/?portfolio=amazing-south-africa        /               301
+/?portfolio=kenya-tanzania-safari       /               301
+/?portfolio=china-yangtze-river         /               301
+/?portfolio=namibia                     /               301
+/?portfolio=spectacular-india           /               301
+/?portfolio=splendors-of-central-europe /               301
+/?portfolio=splendors-of-peru           /               301
+/?portfolio=the-israel-rhapsody         /               301
+/?portfolio=turkey                      /               301
+/?portfolio=vietnam-cambodia            /               301
+
+# ── Tour & custom tour pages → home ──
+/createyourowntour.asp  /               301
+/customizedtours.asp    /               301
+/tour.asp               /               301
+/tours/*                /               301
+
+# ── Paginated destination/tour pages → destinations ──
+/destination.asp?*      /destinations   301
+
+# ── Old HTML destination profiles → destination pages ──
+/australia.html                 /destinations   301
+/botswana.html                  /destinations/africa    301
+/egypt.html                     /destinations/middle-east       301
+/equador.html                   /destinations/americas          301
+/europe.html                    /destinations/europe            301
+/cuba.html                      /destinations/americas          301
+/costarica.html                 /destinations/americas          301
+/ibearian.html                  /destinations/europe            301
+
+# ── HTML subdirectory profiles ──
+/html/*             /destinations   301
+/ebroadcast/*       /               301
+
+# ── PDF brochures → destinations ──
+/brochures/*        /destinations   301
+/PDF/*              /destinations   301
+
+# ── WordPress page_id params → home ──
+/?page_id=*         /               301

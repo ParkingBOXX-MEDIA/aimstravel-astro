@@ -1,0 +1,298 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = "AIMS Travel — A historical archive of a premier international group tour operator specializing in cultural journeys to Africa, Asia, Europe, and the Americas." } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title} | AIMS Travel — International Group Tours Archive</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style is:global>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      :root {
+        --burgundy: #7b1c2e;
+        --burgundy-dark: #4a0f1a;
+        --gold: #c9a227;
+        --gold-light: #e8c84a;
+        --cream: #faf7f0;
+        --sand: #f0ebe0;
+        --text: #2c2416;
+        --muted: #7a6a55;
+        --border: #d8cdb8;
+        --white: #ffffff;
+      }
+
+      body {
+        font-family: Georgia, 'Times New Roman', serif;
+        color: var(--text);
+        background: var(--white);
+        line-height: 1.7;
+      }
+
+      /* ── HEADER ── */
+      header {
+        background: var(--burgundy-dark);
+        border-bottom: 3px solid var(--gold);
+        padding: 0 1.5rem;
+      }
+      .header-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.2rem 0;
+      }
+      .site-brand {
+        text-decoration: none;
+      }
+      .brand-text .name {
+        display: block;
+        font-size: 1.5rem;
+        font-weight: bold;
+        letter-spacing: 0.04em;
+        color: var(--gold-light);
+        line-height: 1.2;
+      }
+      .brand-text .tagline {
+        display: block;
+        font-size: 0.78rem;
+        color: #c8b898;
+        font-style: italic;
+        letter-spacing: 0.06em;
+        margin-top: 0.15rem;
+      }
+
+      /* ── ARCHIVE NOTICE BAR ── */
+      .archive-notice {
+        background: #f5f0e0;
+        border-bottom: 1px solid #d4b84a;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 0.78rem;
+        color: #5a4a1a;
+        text-align: center;
+        padding: 0.4rem 1.5rem;
+      }
+      .archive-notice strong { color: #3a2a00; }
+
+      /* ── NAV ── */
+      nav {
+        background: var(--burgundy);
+        border-bottom: 2px solid var(--gold);
+      }
+      .nav-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0;
+      }
+      nav a {
+        color: #e8d8c8;
+        text-decoration: none;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 0.82rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        padding: 0.7rem 1rem;
+        display: inline-block;
+        transition: background 0.15s, color 0.15s;
+        border-bottom: 3px solid transparent;
+      }
+      nav a:hover, nav a.active {
+        color: var(--gold-light);
+        border-bottom-color: var(--gold);
+        background: rgba(255,255,255,0.07);
+      }
+
+      /* ── HERO BAND ── */
+      .hero-band {
+        background: linear-gradient(135deg, var(--burgundy-dark) 0%, #7b1c2e 100%);
+        color: var(--white);
+        padding: 3rem 1.5rem;
+        text-align: center;
+        border-bottom: 3px solid var(--gold);
+      }
+      .hero-band h1 {
+        font-size: 2.2rem;
+        color: var(--gold-light);
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.03em;
+      }
+      .hero-band p {
+        font-style: italic;
+        color: #d8c8b0;
+        font-size: 1.05rem;
+      }
+
+      /* ── MAIN CONTENT ── */
+      main {
+        max-width: 860px;
+        margin: 2.5rem auto;
+        padding: 0 2.5rem 3rem 3rem;
+      }
+
+      h1 { font-size: 1.9rem; color: var(--burgundy-dark); margin-bottom: 1rem; border-bottom: 2px solid var(--gold); padding-bottom: 0.5rem; }
+      h2 { font-size: 1.4rem; color: var(--burgundy-dark); margin: 2rem 0 0.75rem; }
+      h3 { font-size: 1.15rem; color: var(--burgundy); margin: 1.5rem 0 0.5rem; }
+      p { margin-bottom: 1rem; }
+      ul, ol { margin: 0 0 1rem 1.5rem; }
+      li { margin-bottom: 0.35rem; }
+      a { color: #7b1c2e; text-decoration: underline; }
+      a:hover { color: var(--burgundy-dark); }
+
+      .card {
+        background: var(--cream);
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--gold);
+        border-radius: 4px;
+        padding: 1.25rem 1.5rem;
+        margin: 1.5rem 0;
+      }
+      .card h3 { margin-top: 0; }
+
+      table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.95rem; }
+      th { background: var(--burgundy-dark); color: var(--white); padding: 0.6rem 0.8rem; text-align: left; }
+      td { padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--border); }
+      tr:nth-child(even) td { background: var(--cream); }
+
+      .dest-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 1.25rem;
+        margin: 1.5rem 0;
+      }
+      .dest-card {
+        border: 1px solid var(--border);
+        border-top: 4px solid var(--burgundy);
+        border-radius: 4px;
+        padding: 1.1rem 1.25rem;
+        background: var(--cream);
+        text-decoration: none;
+        color: var(--text);
+        display: block;
+        transition: border-top-color 0.15s, box-shadow 0.15s;
+      }
+      .dest-card:hover { border-top-color: var(--gold); box-shadow: 0 3px 12px rgba(0,0,0,0.1); text-decoration: none; }
+      .dest-card h3 { margin: 0 0 0.4rem; color: var(--burgundy-dark); font-size: 1.05rem; }
+      .dest-card p { margin: 0; font-size: 0.88rem; color: var(--muted); }
+
+      /* ── FOOTER ── */
+      footer {
+        background: var(--burgundy-dark);
+        border-top: 3px solid var(--gold);
+        color: #c8a888;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 0.82rem;
+        padding: 2rem 1.5rem;
+      }
+      .footer-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+      footer h4 { color: var(--gold-light); margin-bottom: 0.6rem; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; }
+      footer a { color: #d8b888; text-decoration: none; }
+      footer a:hover { color: var(--gold-light); text-decoration: underline; }
+      footer ul { list-style: none; padding: 0; }
+      footer li { margin-bottom: 0.3rem; }
+      .footer-disclaimer {
+        max-width: 1100px;
+        margin: 1.5rem auto 0;
+        padding-top: 1.2rem;
+        border-top: 1px solid #3a1a0a;
+        color: #8a6848;
+        font-style: italic;
+        line-height: 1.5;
+      }
+      .footer-bottom {
+        max-width: 1100px;
+        margin: 0.75rem auto 0;
+        color: #5a3828;
+        font-size: 0.75rem;
+      }
+
+      @media (max-width: 640px) {
+        .header-inner { flex-direction: column; text-align: center; }
+        .footer-inner { grid-template-columns: 1fr; }
+        .hero-band h1 { font-size: 1.5rem; }
+        nav a { font-size: 0.75rem; padding: 0.6rem 0.65rem; }
+        main { padding: 0 1.25rem 2rem 1.25rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <a href="/" class="site-brand">
+          <div class="brand-text">
+            <span class="name">AIMS Travel</span>
+            <span class="tagline">International Group Tours · Est. 1990s</span>
+          </div>
+        </a>
+      </div>
+    </header>
+
+    <nav>
+      <div class="nav-inner">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/destinations">Destinations</a>
+        <a href="/destinations/africa">Africa</a>
+        <a href="/destinations/asia">Asia</a>
+        <a href="/destinations/europe">Europe</a>
+        <a href="/destinations/americas">Americas</a>
+        <a href="/destinations/middle-east">Middle East</a>
+        <a href="/news">Travel News</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </nav>
+
+    <div class="archive-notice">
+      <strong>Archive Notice:</strong> This is an independent historical travel resource. Not affiliated with AIMS Travel or any successor organization.
+    </div>
+
+    <slot />
+
+    <footer>
+      <div class="footer-inner">
+        <div>
+          <h4>Destinations</h4>
+          <ul>
+            <li><a href="/destinations/africa">Africa</a></li>
+            <li><a href="/destinations/asia">Asia &amp; the Orient</a></li>
+            <li><a href="/destinations/europe">Europe</a></li>
+            <li><a href="/destinations/americas">The Americas</a></li>
+            <li><a href="/destinations/middle-east">Middle East</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/about">About AIMS Travel</a></li>
+            <li><a href="/news">Travel News</a></li>
+            <li><a href="/destinations">All Destinations</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-disclaimer">
+        <strong style="color:#c8a870">Archive Disclaimer:</strong> This website is maintained as a historical travel resource documenting the tours and destinations offered by AIMS Travel. We are not affiliated with AIMS Travel, any successor organization, or any other entity currently operating under the AIMS Travel name.
+      </div>
+      <div class="footer-bottom">
+        &copy; {new Date().getFullYear()} aimstravel.com — Historical archive. All historical content belongs to its original authors.
+      </div>
+    </footer>
+  </body>
+</html>

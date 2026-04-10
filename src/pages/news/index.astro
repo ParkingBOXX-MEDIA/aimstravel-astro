@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Travel News" description="International travel news, destination guides, and group tour insights from the AIMS Travel archive.">
+
+  <div class="hero-band">
+    <h1>Travel News &amp; Destination Guides</h1>
+    <p>International travel insights and destination coverage</p>
+  </div>
+
+  <main>
+    <h1>Travel News</h1>
+
+    <p>
+      This section of the AIMS Travel archive collects destination guides, practical travel resources, and editorial content on international group travel. The articles here draw on the company's decades of experience operating tours across more than 30 countries, and are intended as a resource for travelers planning cultural journeys of their own — whether with a group operator or independently.
+    </p>
+
+    <div class="post-list">
+      <div class="post-card">
+        <div class="post-meta">
+          <span class="post-tag">Destinations</span>
+          <span class="post-date">April 2025</span>
+        </div>
+        <h2 class="post-title"><a href="/news/group-travel-guide-2025">The Complete Guide to International Group Travel in 2025</a></h2>
+        <p class="post-summary">What to look for in a group tour operator, how to choose the right itinerary, and why cultural immersion matters more than ever.</p>
+        <a class="read-more" href="/news/group-travel-guide-2025">Read more &rarr;</a>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .post-list { display: flex; flex-direction: column; gap: 2rem; margin-top: 1.5rem; }
+  .post-card { border: 1px solid var(--border); border-left: 4px solid var(--gold); border-radius: 4px; padding: 1.25rem 1.5rem; background: var(--white); }
+  .post-meta { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; font-family: Arial, sans-serif; font-size: 0.82rem; }
+  .post-tag { background: var(--burgundy-dark); color: var(--white); padding: 0.15rem 0.5rem; border-radius: 3px; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .post-date { color: var(--muted); }
+  .post-title { font-size: 1.2rem; margin: 0 0 0.5rem; border: none; padding: 0; }
+  .post-title a { color: var(--burgundy-dark); text-decoration: none; }
+  .post-title a:hover { text-decoration: underline; }
+  .post-summary { color: var(--text); margin-bottom: 0.75rem; }
+  .read-more { font-family: Arial, sans-serif; font-size: 0.85rem; font-weight: bold; color: var(--burgundy); text-decoration: none; }
+  .read-more:hover { text-decoration: underline; }
+</style>
