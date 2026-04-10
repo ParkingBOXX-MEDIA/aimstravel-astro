@@ -13,11 +13,35 @@
 /body_index.htm         /               301
 /header_index.htm       /               301
 
-# ── Tour & custom tour pages → home ──
-/createyourowntour.asp  /               301
-/customizedtours.asp    /               301
-/tour.asp               /               301
-/tours/*                /               301
+# ── Tour & custom tour pages → relevant destinations ──
+/createyourowntour.asp          /               301
+/customizedtours.asp            /               301
+/tour.asp                       /               301
+/tours/africa*                  /destinations/africa            301
+/tours/south-africa*            /destinations/africa            301
+/tours/kenya*                   /destinations/africa            301
+/tours/tanzania*                /destinations/africa            301
+/tours/botswana*                /destinations/africa            301
+/tours/namibia*                 /destinations/africa            301
+/tours/egypt*                   /destinations/middle-east       301
+/tours/turkey*                  /destinations/middle-east       301
+/tours/israel*                  /destinations/middle-east       301
+/tours/china*                   /destinations/asia              301
+/tours/india*                   /destinations/asia              301
+/tours/vietnam*                 /destinations/asia              301
+/tours/cambodia*                /destinations/asia              301
+/tours/thailand*                /destinations/asia              301
+/tours/peru*                    /destinations/americas          301
+/tours/galapagos*               /destinations/americas          301
+/tours/costa-rica*              /destinations/americas          301
+/tours/cuba*                    /destinations/americas          301
+/tours/antarctica*              /destinations/americas          301
+/tours/greece*                  /destinations/europe            301
+/tours/europe*                  /destinations/europe            301
+/tours/scandinavia*             /destinations/europe            301
+/tours/croatia*                 /destinations/europe            301
+/tours/italy*                   /destinations/europe            301
+/tours/*                        /destinations                   301
 
 # ── Old HTML destination profiles → destination pages ──
 /australia.html                 /destinations   301
